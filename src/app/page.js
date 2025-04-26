@@ -45,15 +45,16 @@ export default function Home() {
           </button>
         </div>
         <div className="flex-1 flex flex-col p-2">
-          <h1 className="text-4xl font-bold mb-4 text-gray-200">
+          <h1 className="text-4xl font-bold mt-2 text-gray-200">
             My Projects
           </h1>
-          <ul className="mt-4">
+          <ul className="mt-3">
             {projects.map((project) => (
               <li key={project.id}>
                   <Link href={`/ide/${project.id}`}>
-                  <div className="flex items-center justify-between px-3 py-2 bg-gray-800 text-white rounded mb-2">
+                  <div className="flex items-center justify-between px-3 py-3 bg-gray-800 text-gray-200 rounded-lg mb-2">
                     {project.name}
+                    <span className="bg-gray-700 text-gray-300 px-2 py-0.5 text-sm rounded-md">Rust</span>
                     </div>
                   </Link>
               </li>
@@ -62,7 +63,7 @@ export default function Home() {
             <li className="flex justify-center">
               <button
                 onClick={() => newProject()}
-                className="px-3 py-2 bg-blue-500 text-white rounded"
+                className="px-3 py-2 bg-blue-500 text-white cursor-pointer rounded"
               >
                 <FaPlus className="inline" /> Create New Project
               </button>
